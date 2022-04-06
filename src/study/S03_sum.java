@@ -11,12 +11,13 @@ public class S03_sum {
 
 		for (int i = 0; i < array.length; i++) { // array의 행 추출
 			for (int j = 0; j < array[i].length; j++) { // 각 행의 값 추출
+				avg++; // 평균의 분모 자리에 들어갈, 배열 속 개수
 				sum += array[i][j]; // 전체 항목의 합
 				if (array[i][j] > max) { // 최대값
 					max = array[i][j];
 				}
 			}
-			avg += array[i].length; // 평균의 분모 자리에 들어갈, 배열 속 개수
+//			avg += array[i].length; // 평균의 분모 자리에 들어갈, 배열 속 개수
 		}
 		avg = sum / avg; // 평균값
 
