@@ -11,18 +11,12 @@ public class S05_machine {
 	// 첫째 줄부터 n번째 줄까지 각 줄에 식별번호를 오름차순으로 정렬해 가스 보유량과 같이 출력한다.
 
 	// field
+	static S05_machine[] machines; // 입체기동장치 배열 생성
 	int a, b; // 식별번호, 가스보유량
 
-	// main
-	public static void main(String[] args) {
-
-		// 입체기동장치 개수 입력
-		Scanner sc = new Scanner(System.in);
-		System.out.println("입체기동장치의 개수 n을 입력하시오.");
-		int n = sc.nextInt();
-		S05_machine[] machines = new S05_machine[n]; // 입체기동장치 배열
-
-		// 각 입체기동장치에 식별번호 및 가스보유량 부여
+	// method
+	static S05_machine[] input(int n) {
+		machines = new S05_machine[n]; // 입체기동장치 배열 초기화
 		for (int i = 0; i < n; i++) {
 			S05_machine machine = new S05_machine(); // 배열의 행에 들어갈 각 입체기동장치
 			machine.a = (int) (Math.random() * 99) + 2; // 1 <= a <= 100
@@ -35,23 +29,58 @@ public class S05_machine {
 				}
 			}
 		}
-		int tmpNum, tmpGas; // 정렬을 위한 임시변수
-		for (int i = 0; i < n - 1; i++) {
-			for (int j = i + 1; j < n; j++) {
-				if (machines[i].a > machines[j].a) { // 식별번호 오름차순 정렬
-					tmpNum = machines[i].a;
-					machines[i].a = machines[j].a;
-					machines[j].a = tmpNum;
-					tmpGas = machines[i].b; // 가스보유량을 묶어서 이동
-					machines[i].b = machines[j].b;
-					machines[j].b = tmpGas;
+		return machines;
+	}
+
+	static void sort() {
+		S05_machine tmp = new S05_machine(); // machine을 넣을 임시변수
+		for (int i = 0; i < machines.length - 1; i++) {
+			for (int j = i + 1; j < machines.length; j++) {
+				if (machines[i].a > machines[j].a) { // 식별번호에 따른 오름차순 정렬
+					tmp = machines[i];
+					machines[i] = machines[j];
+					machines[j] = tmp;
 				}
 			}
 		}
-		System.out.println("식별번호\t:\t가스보유량");
-		for (int i = 0; i < n; i++) {
-			System.out.println(machines[i].a + "\t:\t" + machines[i].b);
+	}
+
+	static void show() {
+		for (int i = 0; i < machines.length; i++) { // 행(machine)마다 출력
+			System.out.println(machines[i]);
 		}
+	}
+
+	@Override // show()가 주소가 아닌 내용을 토해내게 함
+	public String toString() {
+		return "[식별번호=" + a + ", 가스보유량=" + b + "]";
+	}
+
+	// main
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		// 입체기동장치 개수 입력
+		int n;
+		while (true) {
+			System.out.println("입체기동장치의 개수 n을 입력하시오.");
+			n = sc.nextInt();
+			if (n < 1 || n > 100) {
+				System.out.println("1~100 중에서 입력하시오.");
+			} else {
+				break;
+			}
+		}
+
+		// 각 입체기동장치에 식별번호 및 가스보유량 부여
+		input(n);
+
+		// 정렬
+		sort();
+
+		// 출력
+		show();
+
 		sc.close();
 	}
 }
