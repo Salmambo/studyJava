@@ -1,6 +1,8 @@
 //2022.04.17~2022.04.
 package study;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class S07_bankProjcet_example {
@@ -19,21 +21,39 @@ public class S07_bankProjcet_example {
 //		String owner = scanner.nextLine().replace(" ", "");
 //		System.out.print(owner);
 
+//		System.out.print("계좌 비밀번호로 사용할 6자리 숫자를 입력해주십시오. >> ");
+//		while (run) {
+//			String tmp = scanner.nextLine();
+//			System.out.println(tmp);
+//			if (tmp.matches("^[0-9]*$")) {
+//				int setPassword = Integer.parseInt(tmp);
+//				if ((int) (Math.log10(setPassword) + 1) == 6) {
+//					run = false;
+//				} else {
+//					System.out.println("숫자 6개를 입력해주십시오. >> ");
+//				}
+//			} else {
+//				System.out.println("숫자만 입력해주십시오. >> ");
+//			}
+//		}
+
+//		System.out.println("계좌번호");
+//		String num = scanner.nextLine().replaceAll(" |-", "");
+//		num = num.substring(0, 3) + "-" +num.substring(3, 6) + "-" + num.substring(6);
+//		System.out.println(num);
+		
+		List<Object> accounts = new ArrayList<Object>();
+		System.out.print("개설을 희망하시는 고객님의 성함을 입력해주십시오. >> ");
+		String owner = scanner.nextLine().replace(" ", "");
 		System.out.print("계좌 비밀번호로 사용할 6자리 숫자를 입력해주십시오. >> ");
-		while (run) {
-			String tmp = scanner.nextLine();
-			System.out.println(tmp);
-			if (tmp.matches("^[0-9]*$")) {
-				int setPassword = Integer.parseInt(tmp);
-				if ((int) (Math.log10(setPassword) + 1) == 6) {
-					run = false;
-				} else {
-					System.out.println("숫자 6개를 입력해주십시오. >> ");
-				}
-			} else {
-				System.out.println("숫자만 입력해주십시오. >> ");
-			}
+		String tmp = scanner.nextLine();
+		int setPassword = Integer.parseInt(tmp);
+		accounts.add(owner);
+		accounts.add(setPassword);
+		for(Object account : accounts) {
+			System.out.println(account);
 		}
+		System.out.println(accounts);
 
 		scanner.close();
 	}
