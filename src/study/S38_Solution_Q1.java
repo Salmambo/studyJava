@@ -1,4 +1,4 @@
-//2022.07.11.
+//2022.07.11. ~ 2022.07.12.
 package study;
 
 import java.util.Arrays;
@@ -14,8 +14,9 @@ public class S38_Solution_Q1 {
 	 * land								answer
 	 * [[1,2,3,5],[5,6,7,8],[4,3,2,1]]	16
 	 */
-	private int[][] sum;
 
+	/* 효율성 테스트 실패 - int[][] sum 불필요
+	private int[][] sum;
 	int solution(int[][] land) {
 		int i = 0, lth = land.length;
 		sum = new int[lth][4];
@@ -24,7 +25,6 @@ public class S38_Solution_Q1 {
 		sum(land, 1);
 		return Arrays.stream(sum[lth - 1]).max().getAsInt();
 	}
-
 	private void sum(int[][] land, int i) {
 		if (i != land.length) {
 			int max = Arrays.stream(sum[i - 1]).max().getAsInt();
@@ -38,5 +38,21 @@ public class S38_Solution_Q1 {
 					sum[i][j] = land[i][j] + max;
 			sum(land, i + 1);
 		}
+	}*/
+	int solution(int[][] land) {
+		int i = 1, lth = land.length;
+		while (i < lth) {
+			int max = Arrays.stream(land[i - 1]).max().getAsInt();
+			for (int j = 0; j < 4; j++)
+				if (land[i - 1][j] == max) {
+					land[i - 1][j] = 0;
+					int iki = Arrays.stream(land[i - 1]).max().getAsInt();
+					land[i][j] += iki;
+					land[i - 1][j] = max;
+				} else
+					land[i][j] += max;
+			i++;
+		}
+		return Arrays.stream(land[lth - 1]).max().getAsInt();
 	}
 }
