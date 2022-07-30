@@ -1,7 +1,8 @@
-//2022.07.29.
+//2022.07.29. ~ 2022.07.30.
 package study;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -39,9 +40,67 @@ public class S47_CompetitionTests_N1 {
 		}
 		return answer.isEmpty() ? "-1" : answer.charAt(0) == '0' ? "0" : answer;
 	}*/
+	/* 위보다 더 빠르긴 한데 훨씬 더 빠르게......
 	public String solution(String X, String Y) {
 		String answer = "";
-		return answer;
+		String[] xs = X.charAt(0) == '-' ? X.replaceFirst("-", "").split("") : X.split(""),
+				ys = Y.charAt(0) == '-' ? Y.replaceFirst("-", "").split("") : Y.split("");
+		if (xs.length < ys.length) {
+			Arrays.sort(xs);
+			for (int x = xs.length - 1; x >= 0; x--)
+				for (int y = ys.length - 1; y >= 0; y--)
+					if (xs[x].equals(ys[y])) {
+						answer += xs[x];
+						ys[y] = "";
+						break;
+					}
+		} else {
+			Arrays.sort(ys);
+			for (int y = ys.length - 1; y >= 0; y--)
+				for (int x = xs.length - 1; x >= 0; x--)
+					if (ys[y].equals(xs[x])) {
+						answer += ys[y];
+						xs[x] = "";
+						break;
+					}
+		}
+		return answer.length() == 0 ? "-1" : answer.startsWith("0") ? "0" : answer;
+	}*/
+	// 조금 더 빠르긴 한데 여전히 시간초과
+	public String solution(String X, String Y) {
+		String answer = "";
+		String[] xs = X.split(""), ys = Y.split("");
+		Arrays.sort(xs);
+		Arrays.sort(ys);
+		int x = xs.length - 1, y = ys.length - 1;
+		if (x < y) {
+			while (x >= 0 && y >= 0) {
+				int i = xs[x].compareTo(ys[y]);
+				if (i == 0) {
+					answer += xs[x];
+					x--;
+					y--;
+				} else if (i > 0) {
+					x--;
+				} else {
+					y--;
+				}
+			}
+		} else {
+			while (x >= 0 && y >= 0) {
+				int i = ys[y].compareTo(xs[x]);
+				if (i == 0) {
+					answer += ys[y];
+					x--;
+					y--;
+				} else if (i > 0) {
+					y--;
+				} else {
+					x--;
+				}
+			}
+		}
+		return answer.length() == 0 ? "-1" : answer.startsWith("0") ? "0" : answer;
 	}
 
 	// Q2
