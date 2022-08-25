@@ -2,6 +2,7 @@
  <b>started_2022_03_30</b>
 <br><br>
  [<u>프로그래머스 1레벨 - 55개</u>]
+|-|-|
 | [직사각형 별찍기](https://school.programmers.co.kr/learn/courses/30/lessons/12969) | [S08_Solution_Q2 - 8.line](https://github.com/Salmambo/studyJava/blob/main/src/study/S08_Solution_Q2.java) |
 | [x만큼 간격이 있는 n개의 숫자](https://school.programmers.co.kr/learn/courses/30/lessons/12954) | [S08_Solution_Q2 - 39.line](https://github.com/Salmambo/studyJava/blob/main/src/study/S08_Solution_Q2.java) |
 | [행렬의 덧셈](https://school.programmers.co.kr/learn/courses/30/lessons/12950) | [S09_Solution_Q3 - 6.line](https://github.com/Salmambo/studyJava/blob/main/src/study/S09_Solution_Q3.java) |
