@@ -1,7 +1,7 @@
 # studyJava
  <b>started_2022_03_30</b>
 <br><br>
- [<u>프로그래머스 1레벨 - 55개</u>]
+### <u>[프로그래머스 1레벨 - 55개]</u>
 | 문제 | 풀이 |
 | ---- | ---- |
 | [직사각형 별찍기](https://school.programmers.co.kr/learn/courses/30/lessons/12969) | [S08_Solution_Q2 - 8.line](https://github.com/Salmambo/studyJava/blob/main/src/study/S08_Solution_Q2.java) |
@@ -60,7 +60,7 @@
 | [로또의 최고 순위와 최저 순위](https://school.programmers.co.kr/learn/courses/30/lessons/77484) | [S24_Solution_Q4 - 174.line](https://github.com/Salmambo/studyJava/blob/main/src/study/S24_Solution_Q4.java) |
 | [신고 결과 받기](https://school.programmers.co.kr/learn/courses/30/lessons/92334) | [S25_Solution_Q1 - 12.line](https://github.com/Salmambo/studyJava/blob/main/src/study/S25_Solution_Q1.java) |
 <br>
- [<u>프로그래머스 2레벨 - 27개</u>]
+### <u>[프로그래머스 2레벨 - 27개]</u>
 | 문제 | 풀이 |
 | ---- | ---- |
 | [양궁대회](https://school.programmers.co.kr/learn/courses/30/lessons/92342) | [S30_Solution_Q1 - 6.line](https://github.com/Salmambo/studyJava/blob/main/src/study/S30_Solution_Q1.java) |
@@ -91,7 +91,7 @@
 | [쿼드압축 후 개수 세기](https://school.programmers.co.kr/learn/courses/30/lessons/68936) | [S45_Solution_Q1 - 6.line](https://github.com/Salmambo/studyJava/blob/main/src/study/S45_Solution_Q1.java) |
 | [n^2 배열 자르기](https://school.programmers.co.kr/learn/courses/30/lessons/87390) | [S46_Solution_Q1 - 6.line](https://github.com/Salmambo/studyJava/blob/main/src/study/S46_Solution_Q1.java) |
 <br>
- [<u>우아한테크캠프 5기</u>]
+### <u>[우아한테크캠프 5기]</u>
 | 문제 | 풀이 |
 | ---- | ---- |
 | [1번] | [S19_TechCamp - 10.line](https://github.com/Salmambo/studyJava/blob/main/src/study/S19_TechCamp.java) |
@@ -99,14 +99,14 @@
 | [3번] | [S20_TechCamp_N3 - 6.line](https://github.com/Salmambo/studyJava/blob/main/src/study/S20_TechCamp_N3.java) |
 | [4번] | [S20_TechCamp_N4 - 6.line](https://github.com/Salmambo/studyJava/blob/main/src/study/S20_TechCamp_N4.java) |
 <br>
- [<u>SK텔레콤 T-WorX</u>]
+### <u>[SK텔레콤 T-WorX]</u>
 | 문제 | 풀이 |
 | ---- | ---- |
 | [1번] | [S29_TWorX - 6.line](https://github.com/Salmambo/studyJava/blob/main/src/study/S29_TWorX.java) |
 | [2번] | [S29_TWorX - 48.line](https://github.com/Salmambo/studyJava/blob/main/src/study/S29_TWorX.java) |
 | [3번] | [S29_TWorX - 107.line](https://github.com/Salmambo/studyJava/blob/main/src/study/S29_TWorX.java) |
 <br>
- [<u>현대모비스 알고리즘 경진대회</u>]
+### <u>[현대모비스 알고리즘 경진대회]</u>
 | 문제 | 풀이 |
 | ---- | ---- |
 | [Dead or Arrive] | [S35_Mobis - 11.line](https://github.com/Salmambo/studyJava/blob/main/src/study/S35_Mobis.java) |
